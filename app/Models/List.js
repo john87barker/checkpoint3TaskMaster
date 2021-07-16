@@ -1,9 +1,9 @@
-export default class Value {
-    constructor({ title, bgcolor, completed, entries }) {
-        this.title = title
-        this.bgcolor = bgcolor
-        this.completed = completed
-        this.entries = entries
+import { ProxyState } from "../AppState.js"
+
+
+export default class List {
+    constructor(data) {
+        this.title = data.title
     }
 
     get Template() {

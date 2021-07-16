@@ -1,14 +1,12 @@
-import Value from "./Models/List.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
+import List from "./Models/List.js"
 
 class AppState extends EventEmitter {
-  /** @type {Value[]} */
+  /** @type {lists[]} */
   lists = [
-    new list({
-      title: 'Chores',
-      completed: 1,
-      entries: 5,
+    new List({
+      title: 'Chores'
 
     })
   ]

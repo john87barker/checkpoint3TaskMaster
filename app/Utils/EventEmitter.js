@@ -9,7 +9,7 @@ export class EventEmitter {
   on(event, fn, thisContext = null) {
     if (typeof fn != 'function') { return; }
     if (!(event in this)) {
-      console.error(`Unable to register listener for '${event}'`);
+      // console.error(`Unable to register listener for '${event}'`);
       return;
     }
     this._listeners[event] = Array.isArray(this._listeners[event]) ? this._listeners[event] : [];

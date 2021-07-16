@@ -4,7 +4,14 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   /** @type {Value[]} */
-  values = []
+  lists = [
+    new list({
+      title: 'Chores',
+      completed: 1,
+      entries: 5,
+
+    })
+  ]
 }
 
 export const ProxyState = new Proxy(new AppState(), {

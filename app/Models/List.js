@@ -1,15 +1,16 @@
 export default class Value {
-    constructor(data) {
-        this.title = data.title
-        this.color = data.color
+    constructor({ title, bgcolor, completed, entries }) {
+        this.title = title
+        this.bgcolor = bgcolor
+        this.completed = completed
+        this.entries = entries
     }
 
     get Template() {
 
         return /*html*/`
-        <div class="card p-2 value">
-            ${this.title}
-        </div>
+        <h4>${this.title}</h4>
+        <p>${this.completed}/${this.entries}</p>
         `
     }
 }

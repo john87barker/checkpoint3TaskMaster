@@ -1,1 +1,5 @@
 /* BASIC STYLES HERE */
+.input{
+border: none;
+border-bottom: 2px solid grey;
+}

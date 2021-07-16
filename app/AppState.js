@@ -7,9 +7,19 @@ class AppState extends EventEmitter {
   lists = [
     new List({
       title: 'Chores'
-
     })
   ]
+  // tasks = [
+  //   new Task({
+  //     title: 'Bath'
+  //   }),
+  //   new Task({
+  //     title: 'Laundry'
+  //   }),
+  //   new Task({
+  //     title: 'Lawn'
+  //   })
+  // ]
 }
 
 export const ProxyState = new Proxy(new AppState(), {

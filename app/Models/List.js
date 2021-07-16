@@ -6,11 +6,11 @@ export default class List {
         this.title = data.title
     }
 
-    get Template() {
+    get listTemplate() {
 
         return /*html*/`
         <h4>${this.title}</h4>
-        <p>${this.completed}/${this.entries}</p>
+        
         `
     }
 }

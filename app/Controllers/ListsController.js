@@ -7,7 +7,8 @@ function _draw() {
   let template = ''
   let lists = ProxyState.lists
   // let tasks = ProxyState.tasks
-  lists.forEach(lists => template += lists.listTemplate)
+
+  lists.forEach(lists => template += lists.Template)
   document.getElementById('lists').innerHTML = template
 
   // tasks.forEach(tasks => template += tasks.taskTemplate)

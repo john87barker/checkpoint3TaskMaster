@@ -6,8 +6,8 @@ export default class List {
         this.title = data.title
     }
 
-    get listTemplate() {
-
+    get Template() {
+        console.log("this is dumb")
         return /*html*/`
         <h4>${this.title}</h4>
         

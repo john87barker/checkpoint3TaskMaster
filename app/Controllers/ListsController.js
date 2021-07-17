@@ -8,10 +8,10 @@ function _draw() {
   let lists = ProxyState.lists
   let tasks = ProxyState.tasks
 
-  // lists.forEach(lists => template += lists.listsTemplate)
-  // // tasks.forEach(tasks => template += tasks.taskTemplate)
+  lists.forEach(lists => template += lists.listsTemplate)
+  // tasks.forEach(tasks => template += tasks.taskTemplate)
 
-  // document.getElementById('lists').innerHTML = template
+  document.getElementById('lists').innerHTML = template
   // document.getElementById('tasks').innerHTML = template
   console.log('Tasks:', tasks, 'Lists:', lists)
 }
@@ -38,6 +38,7 @@ export default class ListsController {
 
     }
     // console.log(rawList)
+    // debugger
     listsService.makeList(rawList)
     form.reset()
   }

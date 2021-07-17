@@ -1,5 +1,6 @@
 import { generateId } from "../Utils/GenerateId.js"
-import { ProxyState } from "../AppState.js"
+
+
 
 export default class Task {
   constructor({ title, id = generateId(), listId }) {
@@ -8,11 +9,16 @@ export default class Task {
     this.listId = listId
   }
 
-  get Template() {
+  get tasksTemplate() {
 
     return /*html*/
-    `<li li > ${this.title}
-    <span class="action" onclick="app.listsController.finished('${this.id}')">x</span></li>`
+    `<ul>
+    ${this.name}</ul>
+    <i class="fa fa-trash color-warning text-dark " aria-hidden="true" onclick="app.listsController.removeTask></i>`
+
+    // `<li>${this.name} <span class="action" onclick="app.listsController.removeTopping('${this.id}')">x</span></li>`
+
+
   }
 
 }

@@ -17,8 +17,14 @@ class ListsService {
   }
 
   finished(id) {
-    ProxyState.lists = ProxyState.lists.filter(list => list.id != id)
-    // ProxyState.toppings = ProxyState.toppings.filter(topping => topping.pizzaId != id)
+    if (window.confirm('Erase the list?')) {
+      window.close(
+        ProxyState.lists = ProxyState.lists.filter(list => list.id != id)
+        // ProxyState.toppings = ProxyState.toppings.filter(topping => topping.pizzaId != id)
+      )
+    }
+
+
   }
 
   removeTask(id) {

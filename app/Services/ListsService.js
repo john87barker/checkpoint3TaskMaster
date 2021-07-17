@@ -1,14 +1,16 @@
 import { ProxyState } from "../AppState.js";
 import List from "../Models/List.js";
+import Task from "../Models/Task.js";
 
 
 class ListsService {
   makeList(rawList) {
-    console.log('it made it to the service')
+    console.log('you made a list in the service')
     ProxyState.lists = [...ProxyState.lists, new List(rawList)]
   }
   makeTask(rawTask) {
-    ProxyState.lists = [...ProxyState.lists, new List(rawTask)]
+    console.log('made task in the service')
+    ProxyState.lists = [...ProxyState.tasks, new Task(rawTask)]
   }
   finished(id) {
 

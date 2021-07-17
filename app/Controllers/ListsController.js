@@ -33,21 +33,26 @@ export default class ListsController {
       color: form.color.value,
 
     }
-    console.log(rawList)
+    // console.log(rawList)
     listsService.makeList(rawList)
     form.reset()
   }
 
   makeTask(listId) {
+    // debugger
     event.preventDefault()
     let form = event.target
     let rawTask = {
-      listId,
-      name: form.title.value
+      name: form.title.value,
+      listId
     }
-    tasksService.makeTask(rawTask)
-    form.reset()
+    debugger
+    console.log(rawTask)
+    listsService.makeTask(rawTask)
+    // form.reset()
   }
+
+
   finished(id) {
     // console.log('the click')
     listsService.finished(id)

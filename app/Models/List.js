@@ -1,6 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
-import Task from "./Task.js"
+
 
 export default class List {
     constructor({ title, color, id = generateId() }) {
@@ -28,24 +28,26 @@ export default class List {
                         </label>
                         <div class="d-flex text-right">
                             <p class="text-dark">
+                            <li>
                             ${this.MyTasks}
+                            </li>
                             <i class="fa fa-trash color-warning text-dark " aria-hidden="true"></i>
                             </p>
                         </div>
                     </div>
 
                     <div class="row ">
-                    <form onsubmit="app.listsController.makeList()">
+                    
                         <div class="form-group col-md-10 pl-2 pr-0">
-                            <label for="add task"></label>
-
-                            <input type="text" class="form-control" name="addtask" id=""
-                                placeholder="add task">
+                            <form onsubmit="app.listsController.makeTask('${this.listId}')">  
+                                <label for="add task"></label>
+                                <input type="text" class="form-control" name="addtask" 
+                                    placeholder="add task">
+                            </form>    
                         </div>
                         <div class="d-flex  col-md-2 align-items-center justify-content-center">
-                            <i class="fa fa-plus-square " aria-hidden="true"></i>
+                            <i class="fa fa-plus-square text-dark" aria-hidden="true" onclick="app.listsController.makeTask('${this.listId}')"></i>
                         </div>
-                    </form>    
                     </div>    
                 </div>
                 <hr class="mt-0">
@@ -57,9 +59,9 @@ export default class List {
 
     get MyTasks() {
         let template = ''
-        let tasks = ProxyState.tasks.filter(task => task.tasksId === this.id)
-        tasks.forEach(t => {
-            template += t.Template
+        let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
+        tasks.forEach(lists => {
+            template += lists.Template
         })
         template += `<li> ${tasks}</li>`
         if (!template) {

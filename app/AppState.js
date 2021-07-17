@@ -19,21 +19,21 @@ class AppState extends EventEmitter {
   ]
 
   tasks = [
-    new Task({
-      title: 'Bath',
-      id: 333,
-      listId: 14
-    }),
-    new Task({
-      title: 'Laundry',
-      id: 3313,
-      listId: 14
-    }),
-    new Task({
-      title: 'Lawn',
-      id: 33,
-      listId: 124
-    })
+    // new Task({
+    //   title: 'Bath',
+    //   id: 333,
+    //   listId: 14
+    // }),
+    // new Task({
+    //   title: 'Laundry',
+    //   id: 3313,
+    //   listId: 14
+    // }),
+    // new Task({
+    //   title: 'Lawn',
+    //   id: 33,
+    //   listId: 124
+    // })
   ]
 }
 

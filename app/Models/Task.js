@@ -9,22 +9,22 @@ export default class Task {
     this.listId = listId
   }
 
-  get tasksTemplate() {
+  // get tasksTemplate() {
 
-    return /*html*/`
-        <div class="col-md-12 bg-light pt-3">
-            <div class="btn-group " data-toggle="buttons">
-                <label class="btn btn-alert active">
-                    <input type="checkbox" name="complete" id="first">
-                </label>
-                <div class="d-flex text-right">
-                    <p class=""> ${this.title}
-                        <i class="fa fa-trash color-warning" aria-hidden="true"></i>
-                    </p>
-                </div>
-            </div>
-          </div>
-        <br>
-        `
-  }
+  //   return /*html*/`
+  //       <div class="col-md-12 bg-light pt-3">
+  //           <div class="btn-group " data-toggle="buttons">
+  //               <label class="btn btn-alert active">
+  //                   <input type="checkbox" name="complete" id="first">
+  //               </label>
+  //               <div class="d-flex text-right">
+  //                   <p class=""> ${this.title}
+  //                       <i class="fa fa-trash color-warning" aria-hidden="true"></i>
+  //                   </p>
+  //               </div>
+  //           </div>
+  //         </div>
+  //       <br>
+  //       `
+  // }
 }

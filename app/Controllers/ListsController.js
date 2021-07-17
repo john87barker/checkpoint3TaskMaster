@@ -38,8 +38,16 @@ export default class ListsController {
     form.reset()
   }
 
-  // makeTask(listId){}
-
+  makeTask(listId) {
+    event.preventDefault()
+    let form = event.target
+    let rawTask = {
+      listId,
+      name: form.title.value
+    }
+    tasksService.makeTask(rawTask)
+    form.reset()
+  }
   finished(id) {
     // console.log('the click')
     listsService.finished(id)

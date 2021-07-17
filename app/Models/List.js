@@ -27,14 +27,15 @@ export default class List {
                             <input type="checkbox" name="complete" id="first">
                         </label>
                         <div class="d-flex text-right">
-                            <p class="">
+                            <p class="text-dark">
                             ${this.MyTasks}
-                                <i class="fa fa-trash color-warning" aria-hidden="true"></i>
+                            <i class="fa fa-trash color-warning text-dark " aria-hidden="true"></i>
                             </p>
                         </div>
                     </div>
 
                     <div class="row ">
+                    <form onsubmit="app.listsController.makeList()">
                         <div class="form-group col-md-10 pl-2 pr-0">
                             <label for="add task"></label>
 
@@ -44,6 +45,7 @@ export default class List {
                         <div class="d-flex  col-md-2 align-items-center justify-content-center">
                             <i class="fa fa-plus-square " aria-hidden="true"></i>
                         </div>
+                    </form>    
                     </div>    
                 </div>
                 <hr class="mt-0">

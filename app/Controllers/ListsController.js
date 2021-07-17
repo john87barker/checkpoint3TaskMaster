@@ -7,20 +7,24 @@ function _draw() {
   let template = ''
   let lists = ProxyState.lists
   let tasks = ProxyState.tasks
-  // debugger
-  lists.forEach(lists => template += lists.listsTemplate)
-  // tasks.forEach(tasks => template += tasks.taskTemplate)
 
-  document.getElementById('lists').innerHTML = template
+  // lists.forEach(lists => template += lists.listsTemplate)
+  // // tasks.forEach(tasks => template += tasks.taskTemplate)
+
+  // document.getElementById('lists').innerHTML = template
   // document.getElementById('tasks').innerHTML = template
-  console.log(lists)
+  console.log('Tasks:', tasks, 'Lists:', lists)
 }
 
 //Public
 export default class ListsController {
   constructor() {
-    ProxyState.on("lists", _draw)
-    ProxyState.on("tasks", _draw)
+    ProxyState.on('lists', _draw)
+    ProxyState.on('tasks', _draw)
+    // ProxyState.on('lists', saveState)
+    // ProxyState.on('tasks', saveState)
+
+    // loadState()
 
     _draw()
   }
@@ -39,15 +43,14 @@ export default class ListsController {
   }
 
   makeTask(listId) {
-    // debugger
     event.preventDefault()
     let form = event.target
     let rawTask = {
       name: form.title.value,
       listId
     }
-    debugger
-    console.log(rawTask)
+
+    console.log("[rawTask info]", rawTask)
     listsService.makeTask(rawTask)
     // form.reset()
   }
@@ -56,6 +59,9 @@ export default class ListsController {
   finished(id) {
     // console.log('the click')
     listsService.finished(id)
+  }
+  removeTask(id) {
+    listsService.removeTask(id)
   }
 
 }

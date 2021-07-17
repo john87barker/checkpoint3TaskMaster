@@ -6,16 +6,16 @@ import Task from "./Models/Task.js"
 class AppState extends EventEmitter {
   /** @type {lists[]} */
   lists = [
-    new List({
-      title: 'Chores',
-      id: 124,
-      color: 'blue'
-    }),
-    new List({
-      title: 'Grocery',
-      id: 14,
-      color: 'yellow'
-    }),
+    // new List({
+    //   title: 'Chores',
+    //   id: 124,
+    //   color: 'blue'
+    // }),
+    // new List({
+    //   title: 'Grocery',
+    //   id: 14,
+    //   color: 'yellow'
+    // }),
   ]
 
   tasks = [

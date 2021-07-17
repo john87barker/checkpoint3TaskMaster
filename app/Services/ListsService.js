@@ -10,6 +10,12 @@ class ListsService {
   makeTask(rawTask) {
     ProxyState.lists = [...ProxyState.lists, new List(rawTask)]
   }
+  finished(id) {
+
+    ProxyState.lists = ProxyState.lists.filter(list => list.id != id)
+    // ProxyState.toppings = ProxyState.toppings.filter(topping => topping.pizzaId != id)
+  }
+
 }
 
 export const listsService = new ListsService();

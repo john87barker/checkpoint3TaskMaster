@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
+import Task from "./Task.js"
 
 export default class List {
     constructor({ title, color, id = generateId() }) {
@@ -12,10 +13,11 @@ export default class List {
 
         return /*html*/`
        
-        <div class="col-md-3 card box-shadow bg-${this.color} ">
+        <div class="col-md-3 card box-shadow bg-${this.color} m-3">
             <div class="row d-flex ">
-                <div class="d-flex col-md-12 text-center" id="lists">
+                <div class="d-flex col-md-12 justify-content-between p-2" id="lists">
                     <h4>${this.title}</h4>
+                    <i class="fa fa-times" aria-hidden="true" title= "delete list" onclick = "app.listsController.finished('${this.id}')"></i>
                 </div>
 
 

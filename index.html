@@ -32,8 +32,8 @@
             <div class="col-md-12 d-flex justify-content-space mt-2">
                 <div class="form-group d-flex p-0">
                     <form onsubmit="app.listsController.makeList()">
-                        <input type="text" class="form-control" name="title" id="title" aria-describedby=""
-                            placeholder="list title ..." required>
+                        <input type="text" class="form-control" name="title" id="title" placeholder="list title ..."
+                            required minlength="3" maxlength="15">
                         <div class="form-group">
                             <label for="color" required>Color</label>
                             <select class="form-control" name="color" id="color">
@@ -47,10 +47,7 @@
 
 
 
-                        <!-- <div class="col-md-2 d-flex align-items-baseline justify-content-center m-0 py-3">
-                            <input type="color" id="" name="colorpicker" value="#e66465">
-                            <label for="colorpicker"> Color</label>
-                        </div> -->
+
                         <div class="col-md-2 d-flex align-items-baseline justify-content-center p-0">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
@@ -65,8 +62,6 @@
                 <div class="row d-flex "> -->
 
             <!-- NOTE list template -->
-
-
 
 
             <!-- <div class="col-md-12 bg-light pt-3" id="tasks">

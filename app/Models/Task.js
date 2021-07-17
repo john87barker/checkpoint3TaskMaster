@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
+import List from "./List.js"
 
 export default class Task {
   constructor({ title, id = generateId(), listId }) {

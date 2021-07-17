@@ -40,5 +40,11 @@ export default class ListsController {
 
   // makeTask(listId){}
 
+  finished(id) {
+    // console.log('the click')
+    listsService.finished(id)
+  }
 
 }
+
+

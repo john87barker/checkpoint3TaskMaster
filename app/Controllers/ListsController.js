@@ -13,21 +13,32 @@ function _draw() {
 
   document.getElementById('lists').innerHTML = template
   // document.getElementById('tasks').innerHTML = template
-
+  console.log(lists)
 }
 
 //Public
 export default class ListsController {
   constructor() {
-    ProxyState.on("values", _draw);
-    console.log('controller working')
+    ProxyState.on("lists", _draw)
+    ProxyState.on("tasks", _draw)
+
     _draw()
   }
 
   makeList() {
+    event.preventDefault()
+    let form = event.target
+    let rawList = {
+      title: form.title.value,
+      color: form.color.value,
 
-    _draw()
+    }
+    console.log(rawList)
+    listsService.makeList(rawList)
+    form.reset()
   }
+
+  // makeTask(listId){}
 
 
 }

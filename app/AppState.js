@@ -7,20 +7,32 @@ class AppState extends EventEmitter {
   /** @type {lists[]} */
   lists = [
     new List({
-      title: 'Chores'
-
-    })
+      title: 'Chores',
+      id: 124,
+      // color: 'blue'
+    }),
+    new List({
+      title: 'Grocery',
+      id: 14,
+      // color: 'yellow'
+    }),
   ]
 
   tasks = [
     new Task({
-      title: 'Bath'
+      title: 'Bath',
+      id: 333,
+      listId: 14
     }),
     new Task({
-      title: 'Laundry'
+      title: 'Laundry',
+      id: 3313,
+      listId: 14
     }),
     new Task({
-      title: 'Lawn'
+      title: 'Lawn',
+      id: 33,
+      listId: 124
     })
   ]
 }

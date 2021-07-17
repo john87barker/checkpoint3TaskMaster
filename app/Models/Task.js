@@ -1,9 +1,11 @@
 import { ProxyState } from "../AppState.js"
-
+import { generateId } from "../Utils/GenerateId.js"
 
 export default class Task {
-  constructor(data) {
-    this.title = data.title
+  constructor({ title, id = generateId(), listId }) {
+    this.title = title
+    this.id = id
+    this.listId = listId
   }
 
   get tasksTemplate() {

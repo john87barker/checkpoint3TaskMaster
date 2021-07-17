@@ -9,12 +9,12 @@ class AppState extends EventEmitter {
     new List({
       title: 'Chores',
       id: 124,
-      // color: 'blue'
+      color: 'blue'
     }),
     new List({
       title: 'Grocery',
       id: 14,
-      // color: 'yellow'
+      color: 'yellow'
     }),
   ]
 

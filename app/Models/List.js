@@ -2,17 +2,17 @@ import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
-    constructor({ title, id = generateId() }) {
+    constructor({ title, color, id = generateId() }) {
         this.title = title
         this.id = id
-        // this.color = color
+        this.color = color
     }
 
     get listsTemplate() {
 
         return /*html*/`
        
-        <div class="col-md-3 card box-shadow bg-primary ">
+        <div class="col-md-3 card box-shadow bg-${this.color} ">
             <div class="row d-flex ">
                 <div class="d-flex col-md-12 text-center" id="lists">
                     <h4>${this.title}</h4>

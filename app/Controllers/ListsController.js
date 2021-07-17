@@ -6,12 +6,12 @@ import { listsService } from "../Services/ListsService.js";
 function _draw() {
   let template = ''
   let lists = ProxyState.lists
-  // let tasks = ProxyState.tasks
-
-  lists.forEach(lists => template += lists.Template)
-  document.getElementById('lists').innerHTML = template
-
+  let tasks = ProxyState.tasks
+  // debugger
+  lists.forEach(lists => template += lists.listsTemplate)
   // tasks.forEach(tasks => template += tasks.taskTemplate)
+
+  document.getElementById('lists').innerHTML = template
   // document.getElementById('tasks').innerHTML = template
 
 }

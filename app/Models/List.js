@@ -11,13 +11,13 @@ export default class List {
     }
 
     get listsTemplate() {
-
+        debugger
         return /*html*/`
 
     <div class="col-md-3 card box-shadow bg-${this.color} m-3">
         <div class="row d-flex ">
             <div class="d-flex col-md-12 justify-content-between p-2" id="lists">
-                <h4>${this.title.toUpperCase()}</h4>
+                <h4>${this.title.toLowerCase()}</h4>
                 <i class="fa fa-times" aria-hidden="true" title= "delete list" onclick = "app.listsController.finished('${this.id}')"></i>
             </div>
 
@@ -31,7 +31,8 @@ export default class List {
                     <div class="d-flex text-right text-dark">
 
                         <ul>
-                        ${this.MyTasks}
+                        
+                        ${this.MyTask}
                         </ul>
                         <i class="fa fa-trash color-warning text-dark " aria-hidden="true"></i>
                     </div>
@@ -46,9 +47,9 @@ export default class List {
                                 <input type="text" class="form-control" name="title"
                                 placeholder="add task" required minlength="3" maxlength="50">
                             </div>
-                                <div class="d-flex  col-md-2 align-items-center justify-content-center">
+                            <div class="d-flex  col-md-2 align-items-center justify-content-center">
                                 <button type="button" class="btn btn-success    "><i class="fa fa-plus-square text-dark" aria-hidden="true" onclick="app.listsController.makeTask('${this.listId}')"></i></button>
-                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>    
@@ -60,7 +61,7 @@ export default class List {
 
 
 
-    get MyTasks() {
+    get MyTask() {
         let taskstemplate = ''
         let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
 
@@ -68,7 +69,7 @@ export default class List {
             template += lists.listsTemplate
         })
 
-        taskstemplate += `<ul> ${this.tasks}</ul>`
+        // taskstemplate += `<ul> ${this.listId}</ul>`
 
         if (!taskstemplate) {
             taskstemplate += "No tasks!"

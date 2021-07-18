@@ -47,7 +47,7 @@ export default class ListsController {
     event.preventDefault()
     let form = event.target
     let rawTask = {
-      name: form.title.value,
+      title: form.title.value,
       listId
     }
 

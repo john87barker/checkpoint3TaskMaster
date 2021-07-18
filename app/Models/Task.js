@@ -9,11 +9,11 @@ export default class Task {
     this.listId = listId
   }
 
-  get tasksTemplate() {
+  get Template() {
 
     return /*html*/
     `<ul>
-    ${this.name}</ul>
+    ${this.title}</ul>
     <i class="fa fa-trash color-warning text-dark " aria-hidden="true" onclick="app.listsController.removeTask></i>`
 
     // `<li>${this.name} <span class="action" onclick="app.listsController.removeTopping('${this.id}')">x</span></li>`

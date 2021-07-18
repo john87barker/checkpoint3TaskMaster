@@ -10,15 +10,15 @@ export default class List {
         this.color = color
     }
 
-    get listsTemplate() {
-        debugger
+    get Template() {
+        // debugger
         return /*html*/`
 
     <div class="col-md-3 card box-shadow bg-${this.color} m-3">
         <div class="row d-flex ">
             <div class="d-flex col-md-12 justify-content-between p-2" id="lists">
                 <h4>${this.title.toLowerCase()}</h4>
-                <i class="fa fa-times" aria-hidden="true" title= "delete list" onclick = "app.listsController.finished('${this.id}')"></i>
+                <i class="fa fa-times" title= "delete list" onclick = "app.listsController.finished('${this.id}')"></i>
             </div>
 
 
@@ -34,7 +34,7 @@ export default class List {
                         
                         ${this.MyTask}
                         </ul>
-                        <i class="fa fa-trash color-warning text-dark " aria-hidden="true"></i>
+                        <i class="fa fa-trash color-warning text-dark " onclick = "app.listsController.removeTask('${this.id}')"></i>
                     </div>
                 </div>
 
@@ -43,12 +43,13 @@ export default class List {
                     <div class="form-group col-md-10 pl-2 pr-0">
                         <form onsubmit="app.listsController.makeTask('${this.listId}')">  
                             <div>    
-                                <label for="add task"></label>
+                                
                                 <input type="text" class="form-control" name="title"
                                 placeholder="add task" required minlength="3" maxlength="50">
-                            </div>
-                            <div class="d-flex  col-md-2 align-items-center justify-content-center">
-                                <button type="button" class="btn btn-success    "><i class="fa fa-plus-square text-dark" aria-hidden="true" onclick="app.listsController.makeTask('${this.listId}')"></i></button>
+                            
+                                <button type="submit" class="btn btn-success">
+                                <i class="fa fa-plus-square text-dark" aria-hidden="true" >
+                                </i></button>
                             </div>
                         </form>
                     </div>
@@ -65,11 +66,11 @@ export default class List {
         let taskstemplate = ''
         let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
 
-        tasks.forEach(lists => {
-            template += lists.listsTemplate
+        tasks.forEach(t => {
+            template += t.Template
         })
 
-        // taskstemplate += `<ul> ${this.listId}</ul>`
+        taskstemplate += `<ul> ${this.listId}</ul>`
 
         if (!taskstemplate) {
             taskstemplate += "No tasks!"

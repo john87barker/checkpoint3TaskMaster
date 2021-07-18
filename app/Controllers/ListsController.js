@@ -8,7 +8,7 @@ function _draw() {
   let lists = ProxyState.lists
   let tasks = ProxyState.tasks
 
-  lists.forEach(lists => template += lists.listsTemplate)
+  lists.forEach(lists => template += lists.Template)
   // tasks.forEach(tasks => template += tasks.taskTemplate)
 
   document.getElementById('lists').innerHTML = template
@@ -51,7 +51,7 @@ export default class ListsController {
       listId
     }
 
-    console.log("[rawTask info]", rawTask)
+    console.log(listId)
     listsService.makeTask(rawTask)
     // form.reset()
   }

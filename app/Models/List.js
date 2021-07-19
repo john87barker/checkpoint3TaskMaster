@@ -5,6 +5,7 @@ import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
     constructor({ title, color, id = generateId() }) {
+        // debugger
         this.title = title
         this.id = id
         this.color = color
@@ -39,11 +40,11 @@ export default class List {
                 <div class="row ">
 
                     <div class="form-group col-md-10 pl-2 pr-0">
-                        <form onsubmit="app.listsController.makeTask('${this.listId}')">  
+                        <form onsubmit="app.listsController.makeTask('${this.id}')">  
                             <div>    
                                
                                 <input type="text" class="form-control" name="title"
-                                placeholder="add task" required minlength="3" maxlength="50">
+                                placeholder="add task" required minlength="3" maxlength="50" />
                             
                                 <button type="submit" class="btn btn-success">
                                 <i class="fa fa-plus-square text-dark" aria-hidden="true" >
@@ -61,19 +62,19 @@ export default class List {
 
 
     get MyTask() {
-        let taskstemplate = ''
+        let template = ''
         let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
 
         tasks.forEach(t => {
             template += t.Template
         })
 
-        taskstemplate += `<ul> ${this.listId}</ul>`
+        template += `<ul> ${this.id}</ul>`
 
-        if (!taskstemplate) {
-            taskstemplate += "No tasks!"
+        if (!template) {
+            template += "No tasks!"
         }
-        return taskstemplate
+        return template
     }
 
 

@@ -3,7 +3,7 @@ import { generateId } from "../Utils/GenerateId.js"
 
 
 export default class Task {
-  constructor({ title, id = generateId(), listId }) {
+  constructor({ title, listId, id = generateId() }) {
     this.title = title
     this.id = id
     this.listId = listId

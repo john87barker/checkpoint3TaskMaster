@@ -30,7 +30,7 @@ class ListsService {
     console.log('the remove button worked a little', id)
     if (window.confirm('Remove the task?')) {
       window.close(
-        ProxyState.tasks = ProxyState.tasks.filter(task => task.listId != id))
+        ProxyState.tasks = ProxyState.tasks.filter(task => task.id != id))
     }
     console.log(id)
 

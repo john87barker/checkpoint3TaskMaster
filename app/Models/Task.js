@@ -3,10 +3,11 @@ import { generateId } from "../Utils/GenerateId.js"
 
 
 export default class Task {
-  constructor({ title, listId, id = generateId() }) {
+  constructor({ title, id = generateId(), listId, checked }) {
     this.title = title
     this.id = id
     this.listId = listId
+    this.checked = checked || false
   }
 
   get Template() {
@@ -14,7 +15,7 @@ export default class Task {
     return /*html*/`
     <div class="btn-group  " data-toggle="buttons">
       <label class="btn btn-alert active">
-        <input type="checkbox" name="complete" id="first">
+        <input type="checkbox" name="complete" value="" onclick="app.listsController.toggle('${this.id}')" ${this.checked ? 'checked' : ''}>
       </label>
         <div class="d-flex text-dark text-left">
           <ul>

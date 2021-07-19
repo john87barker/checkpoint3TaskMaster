@@ -66,6 +66,9 @@ export default class ListsController {
     listsService.removeTask(id)
   }
 
+  toggle(id) {
+    listsService.toggle(id)
+  }
 }
 
 

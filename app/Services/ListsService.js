@@ -36,6 +36,16 @@ class ListsService {
 
 
   }
+
+  toggle(id) {
+    let found = ProxyState.tasks.find(task => task.id == id)
+
+    found.checked = !found.checked
+
+    ProxyState.tasks = ProxyState.tasks
+
+    console.log(found)
+  }
 }
 export const listsService = new ListsService();
 

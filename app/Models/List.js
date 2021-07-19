@@ -15,9 +15,9 @@ export default class List {
         return /*html*/`
 
     <div class="col-md-3 card box-shadow bg-${this.color} m-3">
-        <div class="row d-flex ">
-            <div class="d-flex col-md-12 justify-content-between p-2" id="lists">
-                <h4>${this.title.toLowerCase()}</h4>
+        <div class="row">
+            <div class="d-flex col-md-12 justify-content-between p-2"
+                <h4>${this.title.toUpperCase()}</h4>
                 <i class="fa fa-times" title= "delete list" onclick = "app.listsController.finished('${this.id}')"></i>
             </div>
 
@@ -28,7 +28,7 @@ export default class List {
                     
                         <input type="checkbox" name="complete" id="first">
                     </label>
-                    <div class="d-flex text-right text-dark">
+                    <div class="d-flex text-dark">
 
                         <ul>
                         
@@ -43,7 +43,7 @@ export default class List {
                     <div class="form-group col-md-10 pl-2 pr-0">
                         <form onsubmit="app.listsController.makeTask('${this.listId}')">  
                             <div>    
-                                
+                               
                                 <input type="text" class="form-control" name="title"
                                 placeholder="add task" required minlength="3" maxlength="50">
                             

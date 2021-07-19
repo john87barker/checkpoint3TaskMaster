@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { listsService } from "../Services/ListsService.js";
+import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 
 //Private
@@ -21,10 +22,10 @@ export default class ListsController {
   constructor() {
     ProxyState.on('lists', _draw)
     ProxyState.on('tasks', _draw)
-    // ProxyState.on('lists', saveState)
-    // ProxyState.on('tasks', saveState)
+    ProxyState.on('lists', saveState)
+    ProxyState.on('tasks', saveState)
 
-    // loadState()
+    loadState()
 
     _draw()
   }

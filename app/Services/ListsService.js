@@ -28,12 +28,14 @@ class ListsService {
 
   removeTask(id) {
     console.log('the remove button worked a little', id)
-    ProxyState.tasks = ProxyState.tasks.filter(task => task.listId != id)
+    if (window.confirm('Remove the task?')) {
+      window.close(
+        ProxyState.tasks = ProxyState.tasks.filter(task => task.listId != id))
+    }
     console.log(id)
+
+
   }
-
-
 }
-
 export const listsService = new ListsService();
 

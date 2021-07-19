@@ -29,26 +29,28 @@
 
     <main class="container-fluid bg-dark">
         <div class="row ">
-            <div class="col-md-12 d-flex justify-content-space mt-2">
-                <div class="form-group d-flex p-0">
-                    <form onsubmit="app.listsController.makeList()">
-                        <input type="text" class="form-control" name="title" id="title" placeholder="list title ..."
-                            required minlength="3" maxlength="15">
-                        <div class="form-group">
-                            <label for="color" required>Color</label>
-                            <select class="form-control" name="color" id="color">
-                                <option>red</option>
-                                <option selected>blue</option>
-                                <option>yellow</option>
-                                <option>pink</option>
-                                <option>purple</option>
-                            </select>
-                        </div>
+            <div class="col-md-12 d-flex justify-content-space mt-2 p-4">
+                <div class="row">
+                    <div class="form-group d-flex p-0">
+                        <form onsubmit="app.listsController.makeList()">
+                            <input type="text" class="form-control" name="title" id="title" placeholder="list title ..."
+                                required minlength="3" maxlength="15">
+                            <div class="form-group">
+                                <label for="color" required>Color</label>
+                                <select class="form-control" name="color" id="color">
+                                    <option>red</option>
+                                    <option selected>blue</option>
+                                    <option>yellow</option>
+                                    <option>pink</option>
+                                    <option>purple</option>
+                                </select>
+                            </div>
 
-                        <div class="col-md-2 d-flex align-items-baseline justify-content-center p-0">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
+                            <div class="col-md-2 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary ">Create</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
